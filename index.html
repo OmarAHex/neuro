@@ -142,7 +142,7 @@
         .search-bar {
             padding: 10px;
             margin: 5px;
-            width: calc(100% - 20px);
+            width: calc(65% - 20px);
             box-sizing: border-box;
             border-radius: 20px;
             border: 1px solid #ccc;
@@ -279,8 +279,7 @@
                 filterButtons.innerHTML += ['017', '018', '019'].map(source =>
                     `<button id="source-button-${source}" class="source-button" onclick="toggleSource('${source}')">Year ${source}</button>`
                 ).join('') + `<button id="source-button-Unlabeled" class="source-button" onclick="toggleSource('Unlabeled')">Unlabeled</button>`;
-                filterButtons.innerHTML += '<span style="width:100px;display:inline-block"></span>' + `<button id="past-button" class="source-button" onclick="toggleIncorrect()">Possibly Incorrect Qs</button>`;
-                filterButtons.innerHTML += '<br><input type="text" id="search-bar" class="search-bar" placeholder="Search questions..." oninput="filterQuestions()">';
+                filterButtons.innerHTML += `<br><div style="display:flex;flex-direction:row;justify-content:space-between"><input type="text" id="search-bar" class="search-bar" placeholder="Search questions..." oninput="filterQuestions()"><button id="past-button" class="source-button" onclick="toggleIncorrect()">Possibly Incorrect Qs</button></div>`;
             }).then(next)
             .catch(error => console.error('Error loading the questions:', error));
     </script>
